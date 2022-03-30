@@ -1,17 +1,14 @@
 const endpoint = 'http://127.0.0.1:8000/api/'
 
 export const fetchAllStudent = async () => {
-    return await fetch("http://127.0.0.1:8000/api/students", {
-        "method": "GET",
-        "headers": {
-            "Accept": "application/json",
-            "Authorization": "Bearer"
+    return await fetch(`${endpoint}student`, {
+        "method": "GET", "headers": {
+            "Accept": "application/json"
         }
     })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.error(err);
-        });
+            .then(response => (response.json())
+            .then((data) => console.log(data))
+            .catch(err => console.error(err)))
+
+
 }

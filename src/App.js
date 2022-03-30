@@ -4,6 +4,8 @@ import Landing from "./screen/Landing";
 import FormContextProvider from "./context/FormContext";
 import {HomepageLayout} from "./layout/HomepageLayout";
 import Home from './screen/admin/index'
+import {AdminLayout} from "./layout/AdminLayout";
+import Admin from "./screen/admin/index";
 
 const App = () => {
    return (
@@ -12,10 +14,11 @@ const App = () => {
                <Router>
                    <Routes>
                        <Route element={<HomepageLayout/>}>
-                           <Route path='/' element={<Landing/>}/>
-                           <Route path='/admin/*' element={<Home/>}/> />
-
+                           <Route index element={<Landing/>}/>
+                           <Route path='/admin/*' element={<Admin/>}/> />
                        </Route>
+
+
                    </Routes>
                </Router>
            </FormContextProvider>
